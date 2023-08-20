@@ -12,6 +12,7 @@ export const path = {
   MANAGE_POST: "quan-ly-bai-dang",
   EDIT_USER: "sua-thong-tin-ca-nhan",
   CONNECT: "lien-he",
+  PAY_POST: "thanh-toan",
   DETAIL: "/chi-tiet/",
   DETAIL_All: "chi-tiet/*",
 };

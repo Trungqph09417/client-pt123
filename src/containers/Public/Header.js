@@ -18,9 +18,11 @@ const Header = () => {
   const [isShowMenu, setisShowMenu] = useState(false);
   const { isLoggedIn } = useSelector((state) => state.auth);
   const { currentData } = useSelector((state) => state.user);
+
   const goLogin = useCallback((flag) => {
     navigate(path.LOGIN, { state: { flag } });
   }, []);
+
   useEffect(() => {
     listRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
   }, [searchParams.get("page")]);

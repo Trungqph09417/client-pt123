@@ -11,10 +11,10 @@ const Login = () => {
   const location = useLocation();
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  console.log("location>>>", location);
 
   const { isLoggedIn, msg, update } = useSelector((state) => state.auth);
   const [isRegister, setisRegister] = useState(location.state?.flag);
+  console.log(location);
   const [invalidFields, setinvalidFields] = useState([]);
   const [payload, setpayload] = useState({
     name: "",
@@ -24,6 +24,11 @@ const Login = () => {
 
   useEffect(() => {
     setisRegister(location.state?.flag);
+    setpayload({
+      name: "",
+      password: "",
+      phone: "",
+    });
   }, [location.state?.flag]);
 
   useEffect(() => {
@@ -49,7 +54,7 @@ const Login = () => {
         ? dispatch(actions.register(payload))
         : dispatch(actions.login(payload));
   };
-  // console.log(invalidFields);
+  console.log(invalidFields);
 
   return (
     <div className="w-full flex justify-center items-center mb-5">
